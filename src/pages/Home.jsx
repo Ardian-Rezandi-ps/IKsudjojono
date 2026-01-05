@@ -17,8 +17,8 @@ const Home = () => {
     const [canClaim, setCanClaim] = React.useState(false);
 
     const hasCompletedTutorial = sessionStorage.getItem("hasCompletedTutorial");
-    const redirectUserUrl = hasCompletedTutorial ? "/start" : "/guide";
-
+    // redirectUserUrl = hasCompletedTutorial ? "/start" : "/guide";
+ const redirectUserUrl = "/control-arundaya";
     const getUserPoint = async () => {
         const point = await getSelectedUserPoints(user.id);
         setUserPoint(point);
@@ -81,14 +81,9 @@ const Home = () => {
                 <p className="text-xs tracking-widest">
                     JELAJAH K<span className="text-sm">AR</span>YA
                 </p>
-                <h1 className="text-3xl font-bold">Basuki Abdullah</h1>
-                <div className="grid grid-cols-2 gap-2 mx-10 mt-3">
-                    <Link
-                        to="/about/basuki-abdullah"
-                        className="border border-soft-cream bg-primary-darker text-soft-cream rounded-xl text-center content-center px-5 py-2 text-xs"
-                    >
-                        Tentang <br /> Basuki Abdullah
-                    </Link>
+                <h1 className="text-3xl font-bold">Arundaya</h1>
+                <div className="grid grid-cols-1 gap-2 mx-10 mt-3">
+                    
                     <Link
                         to="/about/galeri-indonesia-kaya"
                         className="border border-soft-cream bg-primary-darker text-soft-cream rounded-xl text-center content-center px-5 py-2 text-xs"
@@ -120,7 +115,7 @@ const Home = () => {
                             />
                         </svg>
 
-                        <p className="text-xl">Mulai Jelajahi Karya</p>
+                        <p className="text-xl">Mulai Permainan</p>
                     </Link>
                     <div className="col-span-2 border border-soft-cream bg-primary-darker text-soft-cream rounded-xl text-center p-4 text-xs flex flex-col items-center">
                         {user ? (

@@ -203,3 +203,64 @@ export const searchUserByEmail = async (email) => {
         return null;
     }
 };
+
+// --- Helpers used by ControlArundaya controller ---
+export const getFinishArundaya = async (userId) => {
+    try {
+        const snap = await get(ref(database, `Users/${userId}/finishArundaya`));
+        return snap.exists() ? snap.val() : false;
+    } catch (err) {
+        console.error("getFinishArundaya error:", err);
+        return false;
+    }
+};
+
+export const setFinishArundaya = async (userId, value) => {
+    try {
+        await set(ref(database, `Users/${userId}/finishArundaya`), value);
+        return true;
+    } catch (err) {
+        console.error("setFinishArundaya error:", err);
+        return false;
+    }
+};
+
+export const getgameLutungPoint = async (userId) => {
+    try {
+        const snap = await get(ref(database, `Users/${userId}/gameLutungPoints`));
+        return snap.exists() ? Number(snap.val()) : 0;
+    } catch (err) {
+        console.error("getgameLutungPoint error:", err);
+        return 0;
+    }
+};
+
+export const setgameLutungPoint = async (userId, value) => {
+    try {
+        await set(ref(database, `Users/${userId}/gameLutungPoints`), Number(value));
+        return true;
+    } catch (err) {
+        console.error("setgameLutungPoint error:", err);
+        return false;
+    }
+};
+
+export const setSkorLutungPoint = async (userId, value) => {
+    try {
+        await set(ref(database, `Users/${userId}/skor`), Number(value));
+        return true;
+    } catch (err) {
+        console.error("setSkorLutungPoint error:", err);
+        return false;
+    }
+};
+
+export const setOnlineArundaya = async (userId, value) => {
+    try {
+        await set(ref(database, `Users/${userId}/onlineArundaya`), !!value);
+        return true;
+    } catch (err) {
+        console.error("setOnlineArundaya error:", err);
+        return false;
+    }
+};

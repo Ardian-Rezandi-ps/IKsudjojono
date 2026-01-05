@@ -25,6 +25,7 @@ import About from "./pages/About";
 import Guide from "./pages/Guide";
 import ArtworkListUser from "./pages/dashboard/ArtworkListUser";
 import QuizCarousel from "./pages/QuizCarousel";
+import ControlArundaya from "./pages/ControlArundaya";
 import QuizListUser from "./pages/dashboard/QuizListUser";
 import RedeemCode from "./pages/dashboard/ReedemCode";
 import CompiledImages from "./pages/dashboard/CompiledImages";
@@ -115,6 +116,7 @@ function App() {
                 <Route path="/collection/:id" element={<DetailImage />} />
                 <Route path="/collection/:id/quiz" element={<QuizCarousel />} />
                 <Route path="/profile" element={<ProfileForm />} />
+                <Route path="/control-arundaya" element={<ControlArundaya />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             </Route>
             <Route element={<DashboardLayout />}>
